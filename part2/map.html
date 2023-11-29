@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>map</title>
+        <style>
+            img{
+                display: block;
+                margin: auto;
+                position: relative;
+            }
+            #Play{
+                width: 0px;
+                height: 0px;
+            }
+            #Play img{
+                width: 70px;
+                height: 70px;
+            }
+            #Pause{
+                width: 0px;
+                height: 0px;
+            }
+            #Pause img{
+                width: 70px;
+                height: 70px;
+            }
+        </style>
+        <link rel="stylesheet" href="styles.css">
+        <style type="text/css">
+            #loading {
+                height: 150vw;
+            }
+            #loading-image{
+                margin-top: 60pt;
+                height: 200pt;
+                width: 400pt;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="next">
+            <img src = "map_choice.png" width="1200" height="900" alt="게임하는 방법"></img>
+            
+            <button class="point1" type="button" onclick="javascript:sensorBtnClick('Game');">
+                <img src="point_1.png" alt="Game" width="60" onclick="toGame()">
+            </button>
+
+            <button class="point2" type="button" onclick="javascript:sensorBtnClick('Game');">
+                <img src="point_2.png" alt="Game" width="60" onclick="toGame()">
+            </button>
+
+            <button class="point3" type="button" onclick="javascript:sensorBtnClick('Game');">
+                <img src="point_3.png" alt="Game" width="60" onclick="toGame()">
+            </button>
+
+            <button class="inform" type="button" onclick="toinform()">
+                <img src="inform_before.png" alt="inform" width="170">
+            </button>
+
+            <button id="Play">
+                <img src="speak.png">
+            </button>
+            <button id="Pause">
+                <img src="muted.png">
+            </button>
+        </div>
+
+        <!-- <div id="loading">
+            <img id="loading-image" src="loading.PNG" alt="Loading..." />
+        </div> -->
+        
+    </body>
+
+    <script>
+        // Audio 객체 설정
+        var myAudio = new Audio();
+        myAudio.src = "opening.mp3";
+    
+        // 오디오 재생: 크롬브라우저에서 작동 안함
+        myAudio.play();
+    
+        // 버튼 취득
+        var btnPlay = document.getElementById("Play");
+        var btnPause = document.getElementById("Pause");
+
+        // 재생 버튼
+        btnPlay.onclick = function () {
+            myAudio.play();
+        }
+    
+        // 일시정지 버튼
+        btnPause.onclick = function () {
+            myAudio.pause();
+        }
+
+        // 게임 시작 버튼
+        const Game = document.querySelector("Game");
+        btn.addEventListener("click", toGame);
+
+        function toGame(){
+            window.location.href = "file:///D:/지역연계/html/maingame.html";
+        }
+
+        // 가게 정보
+        const inform = document.querySelector("inform");
+        btn.addEventListener("click", toinform);
+
+        function toinform(){
+            window.location.href = "file:///D:/don'tgiveup/information.html";
+        }
+    </script>
+
+    <style>
+        #next{
+            position : relative;
+            margin: 0 auto;
+            padding: 0 auto;
+        }
+        button.point1 {
+            position: absolute;
+            top: 500px;
+            left: 800px;
+            width: 0px;
+            height: 0px;
+        }
+        button.point2 {
+            position: absolute;
+            top: 500px;
+            left: 1200px;
+            width: 0px;
+            height: 0px;
+        }
+        button.point3 {
+            position: absolute;
+            top: 600px;
+            left: 1000px;
+            width: 0px;
+            height: 0px;
+        }
+        #Play{
+            position: absolute;
+            top: 10px;
+            left: 1405px;
+        }
+        #Pause{
+            position: absolute;
+            top: 10px;
+            left: 1475px;
+        }
+        button.inform{
+            position: absolute;
+            top: 835px;
+            left: 1350px;
+            width: 0px;
+            height: 0px;
+        }
+    </style>
+
+    <!-- <script type="text/javascript">
+        window.onbeforeunload = function () { $('#loading').show(); }  //현재 페이지에서 다른 페이지로 넘어갈 때 표시해주는 기능
+        $(window).load(function () {          //페이지가 로드 되면 로딩 화면을 없애주는 것
+            $('#loading').hide();
+        });
+    </script> -->
+</html>

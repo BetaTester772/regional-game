@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dusgksk</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      canvas {
+        background-color: #ffffff;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+      }
+      /* button {
+        background-color: rgb(255, 255, 255);
+        display: block;
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+      } */
+      button img {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+      }
+      canvas image {
+        position: relative;
+      }
+
+    </style>
+    
+    <script type="text/javascript">
+      window.onload = function() {
+        var canvas = document.getElementById('one');
+        
+        var draw = canvas.getContext("2d");
+        var img = new Image();
+        img.src = "startwindow.PNG";
+        img.onload = function(){
+          draw.drawImage(img, 0, 0, 1200, 900); }
+
+        var draw = canvas.getContext("2d");
+        var img2 = new Image();
+        img.src = "start_button_before.PNG";
+        img.onload = function(){
+          draw.drawImage(img, 0, 0, 200, 200); }
+        }
+      
+    </script>
+  </head>
+  <body>
+    <!-- <video id="video" width="800" height="600" autoplay loop>
+      <source src="Mainwindow.mp4" type="video/mp4">
+    </video> -->
+
+    <audio autoplay loop>
+      <iframe src = "opening.mp3" allow = "autoplay" id = "audio"></iframe>
+    </audio>
+
+    <!-- <div class = 'container'>
+      <p>연하나</p>
+    </div> -->
+
+    <canvas id="one" width="1200" height="900">
+      <button id="StARTGAME" onclick="toGame()" width="100" height="10">
+        <img src = "start_button_before.PNG" alt = "START">
+      </button>
+    </canvas>
+
+    <script>
+      const canvas = document.getElementById('.one');
+      const ctx = canvas.getContext('2d');
+
+      canvas.y = 200;
+      canvas.width = 1200;
+      canvas.height = 900;
+
+      // var button1 = document.getElementById("STARTGAME");
+      // button1.addEventListener("click", function() {
+      //   alert("게임이 시작됩니다!")
+      // });
+
+      const btn = document.querySelector(".btn");
+      btn.addEventListener("click", clickHandler);
+
+      function toGame(){
+        window.location.href = "file:///D:/htm/Second.html";
+      }
+    </script>
+
+  </body>
+</html>

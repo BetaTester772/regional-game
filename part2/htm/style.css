@@ -1,0 +1,14 @@
+.container {
+    font-family: arial;
+    font-size: 30px;
+    margin: 0 auto;
+    width: 500px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    }
+
+    p {
+    text-align: center;
+    margin: 0 auto;
+    }

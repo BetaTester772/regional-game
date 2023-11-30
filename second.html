@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>second</title>
+        <style type="text/css">
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            canvas {
+                background-color: #ffffff;
+                display: block;
+                margin: 0 auto;
+            }
+            /* button {
+                background-color: rgb(255, 255, 255);
+                display: block;
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin: 0 auto;
+            } */
+            button img {
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+        <script type="text/javascript">
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+
+            // 이미지 그리기
+            var image = new Image();
+            image.onload = function() {
+                ctx.drawImage(image, 0, 0, 800, 600); // (x, y, width, height) 좌표와 크기 설정
+            };
+            image.src = "./assets/htm/description";
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <picture id="picture" width="800" height="600">
+            <source src = "./assets/htm/description.png" type="picture/PNG">
+        </picture>
+
+        
+    </body>
+</html>

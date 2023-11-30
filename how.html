@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>how</title>
+        <style>
+            img{
+                display: block;
+                margin: auto;
+            }
+            button img{
+                width: 260px;
+                height: 260px;
+            }
+            #Play{
+                width: 0px;
+                height: 0px;
+            }
+            #Play img{
+                width: 70px;
+                height: 70px;
+            }
+            #Pause{
+                width: 0px;
+                height: 0px;
+            }
+            #Pause img{
+                width: 70px;
+                height: 70px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="next">
+            <img src = "assets/pages/description.jpg" width="1200" height="900" alt="게임하는 방법"></img>
+            
+            <button class="Back" type="button" onclick="javascript:sensorBtnClick('Back');">
+                <img src="assets/pages/back_button_before.png" alt="Back" onclick="toBack()">
+            </button>
+        </div>
+        
+        <button id="Play">
+            <img src="assets/pages/speak.png">
+        </button>
+        <button id="Pause">
+            <img src="assets/pages/muted.png">
+        </button>
+    </body>
+    <script>
+        // Audio 객체 설정
+        var myAudio = new Audio();
+        myAudio.src = "opening.mp3";
+    
+        // 오디오 재생: 크롬브라우저에서 작동 안함
+        myAudio.play();
+    
+        // 버튼 취득
+        var btnPlay = document.getElementById("Play");
+        var btnPause = document.getElementById("Pause");
+
+        // 재생 버튼
+        btnPlay.onclick = function () {
+            myAudio.play();
+        }
+    
+        // 일시정지 버튼
+        btnPause.onclick = function () {
+            myAudio.pause();
+        }
+
+        // 뒤로가기 버튼
+        const Back = document.querySelector("Back");
+        btn.addEventListener("click", toBack);
+
+        function toBack(){
+            window.location.href = "index.html";
+        }
+
+        // URL 파라미터에서 이전 페이지의 재생 위치를 가져와서 음악을 이어서 재생합니다.
+        var urlParams = new URLSearchParams(window.location.search);
+        var currentTime = urlParams.get("time");
+        var myAudio = new Audio("opening.mp3");
+        myAudio.currentTime = currentTime;
+        myAudio.play();
+
+    </script>
+    <style>
+        button.Back {
+            position: absolute;
+            top: 630px;
+            left: 1270px;
+            width: 0px;
+            height: 0px;
+        }
+        #Play{
+            position: absolute;
+            top: 10px;
+            left: 1390px;
+        }
+        #Pause{
+            position: absolute;
+            top: 10px;
+            left: 1460px;
+        }
+    </style>
+</html>
